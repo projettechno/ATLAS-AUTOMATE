@@ -118,7 +118,26 @@
     <div class="row2">
       <div class="field">
         <label>Jour souhaité</label>
-        <input type="date" id="date" required>
+        <div style="display:flex; gap:8px;">
+          <select id="dateDay" required style="flex:1;">
+            <option value="">Jour</option>
+          </select>
+          <select id="dateMonth" required style="flex:1.4;">
+            <option value="">Mois</option>
+            <option value="01">Janvier</option>
+            <option value="02">Février</option>
+            <option value="03">Mars</option>
+            <option value="04">Avril</option>
+            <option value="05">Mai</option>
+            <option value="06">Juin</option>
+            <option value="07">Juillet</option>
+            <option value="08">Août</option>
+            <option value="09">Septembre</option>
+            <option value="10">Octobre</option>
+            <option value="11">Novembre</option>
+            <option value="12">Décembre</option>
+          </select>
+        </div>
       </div>
       <div class="field">
         <label>Créneau</label>
@@ -152,15 +171,22 @@
   const doctorPhone = "212639339952"; // currently Oussama's number for testing
   const doctorName = "Cabinet Médical (Démo)";
 
-  // Prevent selecting a date in the past
-  document.getElementById('date').min = new Date().toISOString().split('T')[0];
+  // Populate the day dropdown (1-31)
+  const dayEl = document.getElementById('dateDay');
+  for (let d = 1; d <= 31; d++) {
+    const opt = document.createElement('option');
+    opt.value = String(d).padStart(2, '0');
+    opt.textContent = d;
+    dayEl.appendChild(opt);
+  }
 
   document.getElementById('reqForm').addEventListener('submit', function(e){
     e.preventDefault();
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
     const reason = document.getElementById('reason').value;
-    const date = document.getElementById('date').value;
+    const day = document.getElementById('dateDay').value;
+    const month = document.getElementById('dateMonth').options[document.getElementById('dateMonth').selectedIndex].text;
     const slot = document.getElementById('slot').value;
     const note = document.getElementById('note').value;
 
@@ -168,7 +194,7 @@
     msg += `Nom : ${name}\n`;
     msg += `Téléphone : ${phone}\n`;
     msg += `Motif : ${reason}\n`;
-    msg += `Date souhaitée : ${date}\n`;
+    msg += `Date souhaitée : ${day} ${month}\n`;
     msg += `Créneau : ${slot}\n`;
     if(note) msg += `Remarque : ${note}\n`;
 
