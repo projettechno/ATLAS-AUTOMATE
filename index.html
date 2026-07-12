@@ -1,1 +1,67 @@
-
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas Automate — Démos Pilotes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EAF1EC; --panel:#FFFFFF; --ink:#12332C; --ink-soft:#4A6259;
+    --teal:#17463C; --teal-deep:#0C2622; --gold:#C89A44; --gold-soft:#E7D3A6;
+    --line:#D3DED8;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;padding:48px 18px 60px;}
+  .wrap{max-width:480px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:10px;margin-bottom:34px;}
+  .brand svg{width:30px;height:30px;flex-shrink:0;}
+  .brand-name{font-family:'Fraunces',serif;font-weight:700;font-size:17px;letter-spacing:.03em;color:var(--teal-deep);}
+  .brand-tag{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);}
+  h1{font-family:'Fraunces',serif;font-weight:700;font-size:24px;margin:0 0 8px;color:var(--teal-deep);}
+  p.sub{color:var(--ink-soft);font-size:14px;line-height:1.55;margin:0 0 30px;}
+  .card{
+    display:block; background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:22px 20px; margin-bottom:16px; text-decoration:none; color:inherit;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .card:hover{border-color:var(--teal);transform:translateY(-2px);}
+  .card-badge{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block;
+  }
+  .card-title{font-family:'Fraunces',serif;font-weight:700;font-size:18px;color:var(--teal-deep);margin:0 0 6px;}
+  .card-desc{font-size:13px;color:var(--ink-soft);line-height:1.5;margin:0;}
+  .arrow{float:right;color:var(--gold);font-size:18px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="8,72 30,38 46,58 66,22 92,72" fill="none" stroke="#C89A44" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="66" cy="22" r="7" fill="#C89A44"/>
+    </svg>
+    <div>
+      <div class="brand-name">ATLAS AUTOMATE</div>
+      <div class="brand-tag">Démos pilotes</div>
+    </div>
+  </div>
+  <h1>Choisissez une démo</h1>
+  <p class="sub">Deux prototypes prêts à tester — remplissez le formulaire et voyez la demande arriver automatiquement sur WhatsApp.</p>
+  <a class="card" href="pharmacy.html">
+    <span class="arrow">→</span>
+    <span class="card-badge">Pharmacie</span>
+    <div class="card-title">Demande de renouvellement</div>
+    <p class="card-desc">Vos clients demandent un produit en ligne, vous recevez la demande sur WhatsApp.</p>
+  </a>
+  <a class="card" href="doctor.html">
+    <span class="arrow">→</span>
+    <span class="card-badge">Cabinet médical</span>
+    <div class="card-title">Demande de rendez-vous</div>
+    <p class="card-desc">Vos patients réservent en ligne, vous recevez la demande sur WhatsApp.</p>
+  </a>
+</div>
+</body>
+</html>
